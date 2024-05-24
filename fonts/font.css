@@ -1,0 +1,17 @@
+@font-face {
+    font-family: 'Roboto';
+    src:
+            url(./Roboto-Regular.ttf) format('truetype'),
+            url(./Roboto-Regular.woff) format('woff'),
+            url(./Roboto-Regular.woff2) format('woff2');
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(./OpenSans.ttf) format('truetype'),
+    url(./OpenSans.woff) format('woff'),
+    url(./OpenSans.woff2) format('woff2');
+    font-display: swap;
+}

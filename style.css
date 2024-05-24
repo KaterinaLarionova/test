@@ -1,0 +1,332 @@
+:root {
+    --Gradient-2: linear-gradient(180deg, rgba(222, 237, 255, 0.60) 0%, rgba(166, 204, 250, 0.50) 100%);
+    --Gradient: linear-gradient(180deg, rgba(10, 34, 64, 0.10) 0%, rgba(10, 34, 64, 1) 100%);
+    --header-color: #000;
+    --text-color: #FFF;
+    --price-color: #FF4B77;
+    --currency-color: #999999;
+    --bg-button-color: #F91155;
+    --bg-image: url(./svg/icon-discount.svg);
+    --bg-button-psevdo: #D8003F;
+    --text-button-psevdo: #F9637C;
+    --link-active:rgba(255, 255, 255, 0.50);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+ul,
+ol,
+li,
+figure {
+    margin: 0;
+    padding:0;
+}
+
+.page {
+    max-width: 1280px;
+    background-image: url(./images/Background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    /*position: relative;
+    height: 100%;*/
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.overlay {
+    background: var(--Gradient-2);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /*position: absolute;*/
+    top:0;
+    left: 0;
+}
+
+.room-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px;
+}
+
+.room-section-title {
+    color: var(--header-color, #000);
+    text-align: center;
+    font-family: Roboto, sans-serif;
+    font-size: 36px;
+    font-style: normal;
+    line-height: 55px;
+    text-transform: uppercase;
+}
+
+.room-section-list {
+    /*display: flex;*/
+    list-style-type: none;
+    color: var(--text-color, #FFF);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(1, 1fr);
+    gap: 32px;
+}
+
+.room-card {
+    max-width: 372px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+}
+
+
+
+.room-card:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.60);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+
+
+.room-card_overlay {
+    background: var(--Gradient);
+    width: 372px;
+    height: 372px;
+    position: absolute;
+    border-radius: 10px;
+    display: block;
+}
+
+.card-motivation:hover::after {
+    content: var(--bg-image);
+    background-repeat: no-repeat;
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    top: 35px;
+    left: 20px;
+    transition: .5s ease;
+}
+
+.card-motivation:hover::before {
+    content:'Гарантия лучшей цены!';
+    font-family: Roboto, sans-serif;
+    line-height: 21px;
+    font-size: 14px;
+    font-weight: 700;
+    width: 177px;
+    height: 30px;
+    color: var(--text-color, #FFF);
+    background: #FF7647;
+    padding: 4px 4px 5px 16px;
+    border-radius: 3px 0 0 3px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    top: 24px;
+    left: 24px;
+    transition: .5s ease;
+}
+
+/*.room-card_overlay:active::before {
+    cursor: pointer;
+    transition: 5s ease;
+}*/
+
+.room-card-img {
+    display: block;
+}
+
+.room-card-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    margin: 24px;
+}
+
+.room-card-section_price {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 9px;
+    border-bottom: solid 1px;
+    padding-bottom: 20px;
+}
+
+.room-card-name {
+    text-decoration: none;
+    color: var(--text-color, #FFF);
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.room-card-name:hover {
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.room-card-name:active {
+    text-decoration-line: none;
+    color: var(--link-active);
+}
+
+
+.room-card-description {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.price-description,
+.card-button {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.price-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    /*border-top: solid 1px;*/
+    /*padding-top: 24px;*/
+}
+
+.price,
+.currency {
+    color: var(--price-color, #FF4B77);
+    font-family: 'Roboto', sans-serif ;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+.currency {
+    color: var(--currency-color, #999999);
+}
+
+.card-button {
+    font-family: "Open Sans", sans-serif;
+    text-decoration-line: none;
+    background-color: var(--bg-button-color, #F91155);
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color, #FFF);
+     height: 48px;
+    width: 180px;
+}
+
+.card-button:hover {
+    background-color: var(--bg-button-psevdo, #D8003F);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.card-button:active {
+    background-color: var(--bg-button-psevdo, #D8003F);
+    color: var(--text-button-psevdo);
+}
+
+
+
+.lightbox {
+   visibility: hidden;
+}
+
+.lightbox:target {
+    /*position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;*/
+    display: flex;
+    align-items: flex-end;
+    visibility: visible;
+    pointer-events: auto;
+
+}
+.lightbox:target:focus {
+    visibility: hidden;
+    pointer-events: auto;
+}
+
+.room-card-reserved {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 372px;
+    height: 96px;
+    position: fixed;
+    background-color: #3C3E43;
+
+}
+
+.overlay-target {
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 372px;
+    height: 372px;
+    position: absolute;
+
+}
+
+.reserved-text {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px;
+}
+
+.reserved-link {
+    font-size: 16px;
+     color:var(--price-color, #FF4B77);
+}
+
+.reserved-link:hover {
+    text-decoration-line: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    cursor: pointer;
+}
+
+.reserved-link:active {
+    text-decoration-line: none;
+    color: rgba(255, 151, 176, 1);
+}
