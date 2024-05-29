@@ -2,9 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Номера и цены</title>
-    <link rel="stylesheet" href="./fonts/font.css"/>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./fonts/font.css">
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/variables.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body class="page">
 <div class="overlay">
@@ -14,40 +18,43 @@
     <h1 class="room-section-title">Номера и цены</h1>
     <ul class="room-section-list">
         <li class="room-card">
-            <a class="room-card-link" href="#">
-            <div class="room-card_overlay"> </div>
+            <div class="room-card_overlay">
 
-            <img class="room-card-img" src="./images/Pic1.png" alt="Представительский люкс">
-            <div class="room-card-block">
-            <div class="room-card-section_price">
-                <a class="room-card-name" href="#">Представительский люкс</a>
-                <p class="room-card-description">Эксклюзивный номер с панорамным видом на центр города Москвы</p>
             </div>
-            <div class="price-block" >
+            <picture>
+                <img class="room-card-img" src="./images/Pic-1x.png" alt="Представительский люкс">
+                <source srcset="./images/Pic-1x.png 1x, ./images/Pic-2x.png 2x" type="png">
+            </picture>
+            <div class="room-card-block">
+                <div class="room-card-section_price">
+                    <a class="room-card-name" href="#">Представительский люкс</a>
+                    <p class="room-card-description">Эксклюзивный номер с панорамным видом на центр города Москвы</p>
+                </div>
+                <div class="price-block">
                     <span class="price-description">Цена за сутки <br>от
                     <span class="price">7 900 </span>
                     <span class="currency">₽</span>
                     </span>
-                <a class="card-button" href="#example1" ><button  class="card-button" type="button" >Забронировать</button></a>
-                <div class="room-card-popover overlay-target lightbox" id="example1" >
-                    <p class="room-card-reserved">
-                    <span class="reserved-text">Номер зарезервирован</span>
-                    <span class="reserved-text">Перейти к <a class="reserved-link">оплате</a></span>
-                    </p>
-
+                    <a class="card-button" href="#example0" onclick="book(0);">
+                        <button class="card-button" type="button">Забронировать</button>
+                    </a>
+                    <div class="overlay-target lightbox" onclick="unbook(0);" id="example0">
+                        <p class="room-card-reserved">
+                            <span class="reserved-text">Номер зарезервирован</span>
+                            <span class="reserved-text">Перейти к <a class="reserved-link">оплате</a></span>
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            </div>
-            </a>
         </li>
-
-       <li class="room-card">
-           <a class="room-card-link" href="#">
+        <li class="room-card">
             <div class="room-card_overlay card-motivation">
 
             </div>
-            <img class="room-card-img" src="./images/Pic2.png" alt="Дуплекс">
+            <picture>
+                <img class="room-card-img" src="./images/Pic2-1x.png" alt="Дуплекс">
+                <source srcset="./images/Pic2-1x.png 1x, ./images/Pic2-2x.png 2x" type="png">
+            </picture>
             <div class="room-card-block">
                 <div class="room-card-section_price">
                     <a class="room-card-name" href="#">Дуплекс</a>
@@ -58,18 +65,26 @@
                     <span class="price">5 700 </span>
                     <span class="currency">₽</span>
                     </span>
-                    <a class="card-button" type="button">Забронировать</a>
+                    <a class="card-button" href="#example1" onclick="book(1);">
+                        <button class="card-button" type="button">Забронировать</button>
+                    </a>
+                    <div class="overlay-target lightbox" onclick="unbook(1);" id="example1">
+                        <p class="room-card-reserved">
+                            <span class="reserved-text">Номер зарезервирован</span>
+                            <span class="reserved-text">Перейти к <a class="reserved-link">оплате</a></span>
+                        </p>
+                    </div>
                 </div>
             </div>
-           </a>
         </li>
-
         <li class="room-card">
-            <a class="room-card-link" href="#">
             <div class="room-card_overlay">
 
             </div>
-            <img class="room-card-img" src="./images/Pic3.png" alt="Бизнес-люкс">
+            <picture>
+                <img class="room-card-img" src="./images/Pic3-1x.png" alt="Бизнес-люкс">
+                <source srcset="./images/Pic3-1x.png 1x, ./images/Pic3-2x.png 2x" type="png">
+            </picture>
             <div class="room-card-block">
                 <div class="room-card-section_price">
                     <a class="room-card-name" href="#">Бизнес-люкс</a>
@@ -80,14 +95,19 @@
                     <span class="price">4 900 </span>
                     <span class="currency">₽</span>
                     </span>
-                    <a class="card-button" type="button">Забронировать</a>
+                    <a class="card-button" href="#example2" onclick="book(2);">
+                        <button class="card-button" type="button">Забронировать</button>
+                    </a>
+                    <div class="overlay-target lightbox" onclick="unbook(2);" id="example2">
+                        <p class="room-card-reserved">
+                            <span class="reserved-text">Номер зарезервирован</span>
+                            <span class="reserved-text">Перейти к <a class="reserved-link">оплате</a></span>
+                        </p>
+                    </div>
                 </div>
             </div>
-            </a>
-        </li>
     </ul>
 </section>
-
-
+<script src="./scripts/script.js"></script>
 </body>
 </html>
